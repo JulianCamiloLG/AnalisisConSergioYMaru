@@ -2231,12 +2231,12 @@ GameObject:
   - component: {fileID: 150061843}
   - component: {fileID: 150061842}
   - component: {fileID: 150061841}
-  m_Layer: 0
-  m_Name: Button (3)
+  m_Layer: 5
+  m_Name: Simular
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &150061840
 RectTransform:
@@ -2276,10 +2276,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 0.9150943, g: 0.7037065, b: 0.17697577, a: 1}
+    m_HighlightedColor: {r: 0.8867924, g: 0.28889292, b: 0, a: 1}
+    m_PressedColor: {r: 0.9245283, g: 0.082858644, b: 0.082858644, a: 1}
+    m_DisabledColor: {r: 0.3490566, g: 0.06421325, b: 0.06421325, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2295,7 +2295,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 150061842}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1826003817}
+        m_MethodName: iniciarSimulacion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &150061842
@@ -2593,7 +2604,7 @@ GameObject:
   - component: {fileID: 159477256}
   - component: {fileID: 159477255}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Nebulosa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6765,12 +6776,12 @@ GameObject:
   - component: {fileID: 408005018}
   - component: {fileID: 408005020}
   - component: {fileID: 408005019}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!224 &408005018
 RectTransform:
@@ -19457,7 +19468,7 @@ GameObject:
   - component: {fileID: 1107907717}
   - component: {fileID: 1107907716}
   m_Layer: 0
-  m_Name: Button (1)
+  m_Name: Planetas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24942,7 +24953,7 @@ GameObject:
   - component: {fileID: 1366194290}
   - component: {fileID: 1366194289}
   m_Layer: 0
-  m_Name: Button (2)
+  m_Name: Borrar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33343,6 +33354,49 @@ Transform:
   m_PrefabParentObject: {fileID: 4741622654147624, guid: 3c41e2481d1431a4e9c6da03e1eb5804,
     type: 2}
   m_PrefabInternal: {fileID: 1370019552}
+--- !u!1 &1826003816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1826003818}
+  - component: {fileID: 1826003817}
+  m_Layer: 0
+  m_Name: ScriptSimular
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1826003817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826003816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8231fa17f8d311344b3e0e045276933e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 224555293}
+  second: {fileID: 1809303660}
+  ui: {fileID: 486508357}
+--- !u!4 &1826003818
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826003816}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 104.18298, y: 46.05002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1830673057 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4741622654147624, guid: 3c41e2481d1431a4e9c6da03e1eb5804,
@@ -38054,7 +38108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2112234050
 RectTransform:
   m_ObjectHideFlags: 0
