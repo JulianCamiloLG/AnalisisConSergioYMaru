@@ -15,8 +15,8 @@ public class Simular : MonoBehaviour {
 
 	public void iniciarSimulacion(){
 		print("click");
-		main.enabled=false;
 		second.enabled=true;
+		main.enabled=false;
 		ui.SetActive(true);
 		botones.SetActive(false);
 	}
