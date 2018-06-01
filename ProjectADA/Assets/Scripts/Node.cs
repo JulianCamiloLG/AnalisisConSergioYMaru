@@ -5,27 +5,26 @@ using UnityEngine;
 public class Node : MonoBehaviour {
 
 	private bool colored;
+	private bool creandoNebulosas;
+	public GameObject node;
 	// Use this for initialization
-	void Start () {
-			colored=false;
-			StartCoroutine(parpadear());
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	void Start(){
+		creandoNebulosas=false;
+		colored=false;
 	}
 
-	IEnumerator parpadear(){
-		yield return new WaitForSeconds(1);
-		if(!colored){
-			GetComponent<Renderer>().material.color=Color.cyan;
-			colored=true;
-		}
-		else{
-			GetComponent<Renderer>().material.color=Color.white;
-			colored=false;
+	void Update(){
+		if(creandoNebulosas){
+			if(Time.fixedTime%.5<.2){
+				node.GetComponent<Renderer>().sharedMaterial.color=Color.cyan;
+			}
+			else{
+				node.GetComponent<Renderer>().sharedMaterial.color=Color.white;
+			}
 		}
 	}
 
+	public void parpadear(){
+		creandoNebulosas=true;
+	}
 }
