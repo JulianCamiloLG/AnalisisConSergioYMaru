@@ -4,27 +4,19 @@ using UnityEngine;
 
 public class Node : MonoBehaviour {
 
-	private bool colored;
-	private bool creandoNebulosas;
-	public GameObject node;
-	// Use this for initialization
+	public Color hoverColor;
+	private Renderer rend;
+	private Color startColor;
+
 	void Start(){
-		creandoNebulosas=false;
-		colored=false;
+		rend=GetComponent<Renderer>();
+		startColor=rend.material.color;
+	}
+	void OnMouseEnter(){
+	rend.material.color = hoverColor;
+	}
+	void OnMouseExit(){
+		rend.material.color=startColor;
 	}
 
-	void Update(){
-		if(creandoNebulosas){
-			if(Time.fixedTime%.5<.2){
-				node.GetComponent<Renderer>().sharedMaterial.color=Color.cyan;
-			}
-			else{
-				node.GetComponent<Renderer>().sharedMaterial.color=Color.white;
-			}
-		}
-	}
-
-	public void parpadear(){
-		creandoNebulosas=true;
-	}
 }
