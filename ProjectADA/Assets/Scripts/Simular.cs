@@ -7,6 +7,7 @@ public class Simular : MonoBehaviour {
 	public Camera main;
 	public Camera second;
 	public GameObject ui;
+	public GameObject botones;
 
 	void Start(){
 
@@ -17,6 +18,7 @@ public class Simular : MonoBehaviour {
 		main.enabled=false;
 		second.enabled=true;
 		ui.SetActive(true);
+		botones.SetActive(false);
 	}
 	
 	
