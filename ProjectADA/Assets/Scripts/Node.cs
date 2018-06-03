@@ -10,6 +10,7 @@ public class Node : MonoBehaviour {
 	private Renderer rend;
 	private Color startColor;
 	private GameObject nebulosa;
+	private GameObject nebulosaMostrar;
 	private bool ocupado;
 	private bool creado;
 
@@ -20,33 +21,20 @@ public class Node : MonoBehaviour {
 		ocupado=false;
 		creado=false;
 	}
-	void OnTriggerEnter(Collider colision){
-		//ocupado=true;
-	}
-	void OnTriggerExit(Collider colision){
-		//ocupado=false;
-	}
+
 
 	void OnMouseEnter(){
-		if(ocupado){
-			rend.material.color=nodoOcupado;
-		}
-		else{
-			if(!creado){
-				rend.material.color=hoverColor;
-				GameObject construirNebulosa = ControladorCreacion.instance.getNebulosa();
-				nebulosa = (GameObject) Instantiate(construirNebulosa,transform.position+Offset,transform.rotation);
-				creado=true;
-			}
-		}
-
+		rend.material.color=hoverColor;
+		GameObject construirNebulosa = ControladorCreacion.instance.getNebulosa();
+		nebulosaMostrar = (GameObject) Instantiate(construirNebulosa,transform.position+Offset,transform.rotation);
+		creado=true;
 	}
 
 	void OnMouseExit(){
 		rend.material.color=startColor;
-		Destroy(nebulosa);
-		creado=false;
-
+		if(creado){
+			Destroy(nebulosaMostrar);
+		}
 	}
 
 	void OnMouseDown(){
@@ -56,6 +44,7 @@ public class Node : MonoBehaviour {
 		}
 		GameObject construirNebulosa = ControladorCreacion.instance.getNebulosa();
 		nebulosa = (GameObject) Instantiate(construirNebulosa,transform.position+Offset,transform.rotation);
+		ocupado=true;
 	}
 
 }
