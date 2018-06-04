@@ -17673,7 +17673,6 @@ GameObject:
   - component: {fileID: 1826003818}
   - component: {fileID: 1826003817}
   - component: {fileID: 1826003819}
-  - component: {fileID: 1826003820}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -17722,18 +17721,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nebulosaInicial: {fileID: 1383391771194954, guid: 04b744e0c1ca3bf4c98a88d330ae7a78,
     type: 2}
---- !u!114 &1826003820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1826003816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64968d4d9c56a894a92f511eca165ce2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Offset: {x: 0, y: 0, z: 0}
 --- !u!4 &1827617243 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4741622654147624, guid: 3c41e2481d1431a4e9c6da03e1eb5804,
@@ -18437,7 +18424,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1826003820}
+      - m_Target: {fileID: 0}
         m_MethodName: inicializar
         m_Mode: 1
         m_Arguments:

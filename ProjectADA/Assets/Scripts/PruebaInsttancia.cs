@@ -11,9 +11,9 @@ public class PruebaInsttancia : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyUp(KeyCode.Space))
-			GameObject nebulosa= Instantiate(prefab,transform.position,transform.rotation) as GameObject;		
-			
-	}
+	//void Update () {
+	//	if (Input.GetKeyUp(KeyCode.Space))
+	//		GameObject nebulosa= Instantiate(prefab,transform.position,transform.rotation) as GameObject;		
+	//		
+	//}
 }
