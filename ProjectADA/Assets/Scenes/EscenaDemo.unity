@@ -17651,8 +17651,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 224555293}
-  second: {fileID: 1809303660}
-  ui: {fileID: 486508357}
+  second: {fileID: 0}
+  ui: {fileID: 1809303657}
   botones: {fileID: 513600560}
 --- !u!4 &1826003818
 Transform:
