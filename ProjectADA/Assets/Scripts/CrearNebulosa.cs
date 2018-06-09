@@ -9,32 +9,30 @@ public class CrearNebulosa : MonoBehaviour {
 	private GameObject nebulosaMover;
 	private Vector3 screenPoint;
 	private string nombre;
-	private bool creada;
-	private float posicionActualX;
-	private float posicionActualY;
+	public bool creada;
+	private bool movido;
+
 	void Start(){
 		nombre="Ingrese el nombre de la nebulosa";
 		creada=false;
-		posicionActualY=0;
-		posicionActualX=0;
-
+		movido=false;
+		GetComponent<Galaxia.Galaxy>().GPU=false;
 	}
 
-	void OnGUI(){
-		if(creada){
-			nombre=GUI.TextField(new Rect(posicionActualX,posicionActualY+20,200,20), nombre,25);
-			if(GUI.Button(new Rect(posicionActualX,posicionActualY,200,20),"Aceptar")){
-				print("creada la nebulosa: "+nombre);
-				GUI.Label(new Rect(posicionActualX,posicionActualY+40,200,30), nombre);
-
-			}
+	void Update(){
+		GameObject shuriken= GameObject.Find("Shuriken Renderer");
+		if(shuriken!=null && creada){
+			GetComponent<Renderer>().enabled=false;
+			shuriken.name="Particulas";
+			shuriken.transform.position=transform.position;
+			shuriken.transform.localScale=transform.localScale;
+			shuriken.transform.parent=transform;
+			movido=true;
 		}
 	}
 
 	void OnMouseDown(){
-		creada=true;
-		posicionActualX=Input.mousePosition.x;
-		posicionActualY=Input.mousePosition.y;
+		print("clickee");
 	}
 
 	// Use this for initialization

@@ -24,6 +24,9 @@ public class Node : MonoBehaviour {
 
 
 	void OnMouseEnter(){
+		if(ocupado){
+			return;
+		}
 		rend.material.color=hoverColor;
 		GameObject construirNebulosa = ControladorCreacion.instance.getNebulosa();
 		nebulosaMostrar = (GameObject) Instantiate(construirNebulosa,transform.position+Offset,transform.rotation);
@@ -44,7 +47,11 @@ public class Node : MonoBehaviour {
 		}
 		GameObject construirNebulosa = ControladorCreacion.instance.getNebulosa();
 		nebulosa = (GameObject) Instantiate(construirNebulosa,transform.position+Offset,transform.rotation);
+		nebulosa.GetComponent<CrearNebulosa>().creada=true;
 		ocupado=true;
 	}
 
+	public void CrearNebulosas(){
+		//nebulosas=true;
+	}
 }
