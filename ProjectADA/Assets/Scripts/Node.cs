@@ -5,7 +5,6 @@ using UnityEngine;
 public class Node : MonoBehaviour {
 
 	public Color hoverColor;
-	public Color nodoOcupado;
 	public Vector3 Offset;
 	private Renderer rend;
 	private Color startColor;
@@ -45,13 +44,18 @@ public class Node : MonoBehaviour {
 			Debug.Log("No se puede construir ahi - TODO: Display on screen.");
 			return;
 		}
-		GameObject construirNebulosa = ControladorCreacion.instance.getNebulosa();
-		nebulosa = (GameObject) Instantiate(construirNebulosa,transform.position+Offset,transform.rotation);
-		nebulosa.GetComponent<CrearNebulosa>().creada=true;
-		ocupado=true;
+		CrearNebulosas();
 	}
 
 	public void CrearNebulosas(){
-		//nebulosas=true;
+		ocupado=true;
+		GameObject construirNebulosa = ControladorCreacion.instance.getNebulosa();
+		nebulosa = (GameObject) Instantiate(construirNebulosa,transform.position+Offset,transform.rotation);
+		GameObject nebulosas = GameObject.Find("Nebulosas");
+		GameObject nebula = GameObject.Find("Nebulosa(Clone)");
+		nebula.transform.parent=nebulosas.transform;
+		nebula.name="Nebulosa";
+		CrearNebulosa creacion= nebula.GetComponent(typeof(CrearNebulosa)) as CrearNebulosa;
+		creacion.reCrear();
 	}
 }
