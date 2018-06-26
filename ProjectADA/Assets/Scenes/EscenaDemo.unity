@@ -18614,6 +18614,7 @@ GameObject:
   - component: {fileID: 1826003817}
   - component: {fileID: 1826003819}
   - component: {fileID: 1826003820}
+  - component: {fileID: 1826003821}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -18679,6 +18680,17 @@ MonoBehaviour:
   botonNebulosas: {fileID: 1894627639}
   botonSimular: {fileID: 1931954680}
   botonBorrar: {fileID: 758444016}
+--- !u!114 &1826003821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1826003816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc0d115b194c8e4083a893436275e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1827617243 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4741622654147624, guid: 3c41e2481d1431a4e9c6da03e1eb5804,

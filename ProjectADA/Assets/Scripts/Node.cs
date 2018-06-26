@@ -52,10 +52,9 @@ public class Node : MonoBehaviour {
 		GameObject construirNebulosa = ControladorCreacion.instance.getNebulosa();
 		nebulosa = (GameObject) Instantiate(construirNebulosa,transform.position+Offset,transform.rotation);
 		GameObject nebulosas = GameObject.Find("Nebulosas");
-		GameObject nebula = GameObject.Find("Nebulosa(Clone)");
-		nebula.transform.parent=nebulosas.transform;
-		nebula.name="Nebulosa";
-		CrearNebulosa creacion= nebula.GetComponent(typeof(CrearNebulosa)) as CrearNebulosa;
-		creacion.reCrear();
+		nebulosa.transform.parent=nebulosas.transform;
+		nebulosa.name="Nebula";
+		nebulosa.AddComponent(typeof(CrearNebulosa));
+		nebulosa.GetComponent<CrearNebulosa>().creada=true;
 	}
 }

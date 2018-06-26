@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33579704467714488}
   - component: {fileID: 23292346854452476}
   - component: {fileID: 114241951778853970}
-  - component: {fileID: 114955935243038008}
   m_Layer: 0
   m_Name: Nebulosa
   m_TagString: Untagged
@@ -91,7 +90,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1383391771194954}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 216557722, guid: f1157d3bd73d6474481e79c09412dee1, type: 3}
   m_Name: 
@@ -104,15 +103,3 @@ MonoBehaviour:
   m_galaxy: {fileID: 11400000, guid: a0f295e4a6b3747498271ca52f84ee72, type: 2}
   m_saveMeshes: 0
   m_saveParticles: 0
---- !u!114 &114955935243038008
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1383391771194954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64968d4d9c56a894a92f511eca165ce2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  creada: 0
