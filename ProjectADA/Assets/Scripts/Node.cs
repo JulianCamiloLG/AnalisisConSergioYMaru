@@ -53,8 +53,7 @@ public class Node : MonoBehaviour {
 		nebulosa = (GameObject) Instantiate(construirNebulosa,transform.position+Offset,transform.rotation);
 		GameObject nebulosas = GameObject.Find("Nebulosas");
 		nebulosa.transform.parent=nebulosas.transform;
-		nebulosa.name="Nebula";
+		nebulosa.name="Nebulosa";
 		nebulosa.AddComponent(typeof(CrearNebulosa));
-		nebulosa.GetComponent<CrearNebulosa>().creada=true;
 	}
 }
