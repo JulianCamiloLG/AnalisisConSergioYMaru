@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33579704467714488}
   - component: {fileID: 23292346854452476}
   - component: {fileID: 114241951778853970}
+  - component: {fileID: 135616118426320202}
   m_Layer: 0
   m_Name: Nebulosa
   m_TagString: Untagged
@@ -103,3 +104,15 @@ MonoBehaviour:
   m_galaxy: {fileID: 11400000, guid: a0f295e4a6b3747498271ca52f84ee72, type: 2}
   m_saveMeshes: 0
   m_saveParticles: 0
+--- !u!135 &135616118426320202
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383391771194954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
