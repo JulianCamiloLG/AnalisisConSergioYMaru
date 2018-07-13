@@ -24,7 +24,7 @@ public class detallesNebu : MonoBehaviour {
 		//label.GetComponent<Text>().text=nombre;
 		label.transform.position=transform.position;
 		label.transform.rotation=transform.rotation;
-		print(Camera.main.WorldToViewportPoint(label.transform.position));
+		//print(Camera.main.WorldToViewportPoint(label.transform.position));
 	}
 	void OnMouseExit(){
 		//label.GetComponent<Text>().text="";
