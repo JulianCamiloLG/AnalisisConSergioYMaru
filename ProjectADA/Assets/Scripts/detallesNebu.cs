@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class detallesNebu : MonoBehaviour {
 
-
 	private GameObject label;
-	public string nombre;
+	private string nombre;
+	private string [] nombres;
 
 	// Use this for initialization
 	void Start () {
 		nombre="SergioMonsalve";
-		cambiarNombre();
+		//cambiarNombre();
+		nombres=new string[4] {"Sergio","Andres","Cardona","Castro"};
+		//cambiarNombre();
 	}
 
 
@@ -21,10 +23,11 @@ public class detallesNebu : MonoBehaviour {
 	}
 	void OnMouseEnter(){
 		label=GameObject.Find("labelnebu");
-		//label.GetComponent<Text>().text=nombre;
+		nombre=nombres[Random.Range(0,3)];
+		label.GetComponent<TextMesh>().text=nombre;
 		label.transform.position=transform.position;
-		label.transform.rotation=transform.rotation;
-		print(Camera.main.WorldToViewportPoint(label.transform.position));
+		label.transform.localRotation= Quaternion.Euler(90f,0,0);
+		//print(Camera.main.WorldToViewportPoint(label.transform.position));
 	}
 	void OnMouseExit(){
 		//label.GetComponent<Text>().text="";
@@ -32,7 +35,5 @@ public class detallesNebu : MonoBehaviour {
 	}
 
 
-	public void cambiarNombre(){
-		
-	}
+
 }
