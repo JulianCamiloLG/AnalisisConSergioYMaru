@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class CrearNebulosa : MonoBehaviour {
 
-	public  bool arreglada;
-	private GameObject nebulosaMover;
-	private Vector3 screenPoint;
-	private string nombre;
 
+	private  bool arreglada;
+	private GameObject nebulosaMover;
+	
 	void Start(){
-		nombre="Ingrese el nombre de la nebulosa";
 		arreglada=true;
 		GetComponent<Galaxia.Galaxy>().GPU=false;
 		StartCoroutine (volverFalso ());
-		GetComponent<Collider>().enable=true;
+		Collider clider=GetComponent<Collider>();
+		clider.enabled=true;
+		
 	}
 
 	void Update(){
@@ -31,13 +31,6 @@ public class CrearNebulosa : MonoBehaviour {
 				arreglada=true;
 			}
 		}
-	}
-
-	void OnMouseDown(){
-		print("clickee");
-	}
-	void OnMouseEnter(){
-		print("entre");
 	}
 
 	IEnumerator volverFalso(){
