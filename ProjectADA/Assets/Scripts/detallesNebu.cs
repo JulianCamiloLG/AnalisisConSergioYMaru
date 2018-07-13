@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class detallesNebu : MonoBehaviour {
 
 
-	public GameObject label;
-	private string nombre;
+	private GameObject label;
+	public string nombre;
 
 	// Use this for initialization
 	void Start () {
 		nombre="SergioMonsalve";
-		//cambiarNombre();
+		cambiarNombre();
 	}
 
 
@@ -20,17 +20,19 @@ public class detallesNebu : MonoBehaviour {
 		print("clickee");
 	}
 	void OnMouseEnter(){
-		label.GetComponent<Text>().text=nombre;
+		label=GameObject.Find("labelnebu");
+		//label.GetComponent<Text>().text=nombre;
 		label.transform.position=transform.position;
-		label.SetActive(true);
+		label.transform.rotation=transform.rotation;
+		print(Camera.main.WorldToViewportPoint(label.transform.position));
 	}
 	void OnMouseExit(){
-		label.GetComponent<Text>().text="";
-		//label.text="";
-		label.SetActive(false);
+		//label.GetComponent<Text>().text="";
+		label.transform.position=new Vector3(0,0,0);
 	}
 
 
 	public void cambiarNombre(){
+		
 	}
 }

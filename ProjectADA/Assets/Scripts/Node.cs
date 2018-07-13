@@ -6,6 +6,7 @@ public class Node : MonoBehaviour {
 
 	public Color hoverColor;
 	public Vector3 Offset;
+
 	private Renderer rend;
 	private Color startColor;
 	private GameObject nebulosa;
