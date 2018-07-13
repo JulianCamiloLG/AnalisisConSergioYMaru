@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class CrearNebulosa : MonoBehaviour {
 
-
-	private  bool arreglada;
+	public GameObject boton;
+	public GameObject texto;
+	private bool arreglada;
 	private GameObject nebulosaMover;
 	
 	void Start(){
@@ -15,6 +16,7 @@ public class CrearNebulosa : MonoBehaviour {
 		StartCoroutine (volverFalso ());
 		Collider clider=GetComponent<Collider>();
 		clider.enabled=true;
+		cambiarNombre();
 	}
 
 	void Update(){
@@ -38,4 +40,10 @@ public class CrearNebulosa : MonoBehaviour {
 		arreglada=false;
 	}
 
+	public void cambiarNombre(){
+		texto.SetActive(true);
+		boton.SetActive(true);
+		texto.transform.position=new Vector3(transform.position.x+20,transform.position.y,transform.position.z);
+		boton.transform.position=new Vector3(transform.position.x+20,transform.position.y-20,transform.position.z);
+	}
 }
