@@ -15,7 +15,7 @@ public class CrearNebulosa : MonoBehaviour {
 		arreglada=true;
 		GetComponent<Galaxia.Galaxy>().GPU=false;
 		StartCoroutine (volverFalso ());
-		GetComponent<Collider>().enable=true;
+		//GetComponent<Collider>().enable=true;
 	}
 
 	void Update(){
