@@ -1,14 +1,15 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CrearNebulosa : MonoBehaviour {
 
-	public GameObject boton;
-	public GameObject texto;
 	private bool arreglada;
 	private GameObject nebulosaMover;
+	private GameObject label;
+	public string nombre;
+	Vector3 originalPos;
 	
 	void Start(){
 		arreglada=true;
@@ -16,6 +17,9 @@ public class CrearNebulosa : MonoBehaviour {
 		StartCoroutine (volverFalso ());
 		Collider clider=GetComponent<Collider>();
 		clider.enabled=true;
+		nombre="";
+		label=GameObject.Find("labelnebu");
+		originalPos=label.transform.position;
 		cambiarNombre();
 	}
 
@@ -41,9 +45,35 @@ public class CrearNebulosa : MonoBehaviour {
 	}
 
 	public void cambiarNombre(){
-		texto.SetActive(true);
-		boton.SetActive(true);
-		texto.transform.position=new Vector3(transform.position.x+20,transform.position.y,transform.position.z);
-		boton.transform.position=new Vector3(transform.position.x+20,transform.position.y-20,transform.position.z);
+		GameObject texto=GameObject.Find("nombreNebu");
+		GameObject boton=GameObject.Find("aceptarNombreNebu");
+		Vector3 origenTexto=texto.transform.position;
+		Vector3 origenBoton=boton.transform.position;
+		Vector3 posicionNebu=Camera.main.WorldToScreenPoint(transform.position);
+		texto.transform.position=new Vector3(posicionNebu.x+20,posicionNebu.y);
+		boton.transform.position=new Vector3(posicionNebu.x+20,posicionNebu.y-25);
+		boton.GetComponent<Button>().onClick.AddListener(delegate {changeName(texto,boton,origenBoton,origenTexto);});
+	}
+	public void changeName(GameObject texto,GameObject boton, Vector3 origenBoton, Vector3 origenTexto){
+		if(texto.GetComponent<InputField>().text!=""){
+			string nombresito=texto.GetComponent<InputField>().text;
+			print(nombresito);
+			nombre=nombresito;
+			texto.transform.position=origenTexto;
+			boton.transform.position=origenBoton;
+			//texto.GetComponent<InputField>().text="";
+		}
+	}
+
+	void OnMouseDown(){
+		print("clickee");
+	}
+	void OnMouseEnter(){
+		label.GetComponent<TextMesh>().text=nombre;
+		label.transform.position=transform.position;
+		label.transform.localRotation= Quaternion.Euler(90f,0,0);
+	}
+	void OnMouseExit(){
+		label.transform.position=originalPos;
 	}
 }
