@@ -10,6 +10,9 @@ public class CrearNebulosa : MonoBehaviour {
 	private GameObject label;
 	public string nombre;
 	Vector3 originalPos;
+	int click;
+	float tiempoclicks;
+	float tiempomax;
 	
 	void Start(){
 		arreglada=true;
@@ -20,7 +23,8 @@ public class CrearNebulosa : MonoBehaviour {
 		nombre="";
 		label=GameObject.Find("labelnebu");
 		originalPos=label.transform.position;
-		cambiarNombre();
+		click=0;
+		//cambiarNombre();
 	}
 
 	void Update(){
@@ -57,8 +61,6 @@ public class CrearNebulosa : MonoBehaviour {
 	public void changeName(GameObject texto,GameObject boton, Vector3 origenBoton, Vector3 origenTexto){
 		if(texto.GetComponent<InputField>().text!=""){
 			string nombresito=texto.GetComponent<InputField>().text;
-			print(nombresito);
-			nombre=nombresito;
 			texto.transform.position=origenTexto;
 			boton.transform.position=origenBoton;
 			//texto.GetComponent<InputField>().text="";
@@ -66,10 +68,16 @@ public class CrearNebulosa : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		print("clickee");
+		click++;
+		tiempoclicks=time.time;
+		if(click>1){
+			if((time.time-tiempoclicks)<delay){
+				listaPlanetas.instance.CrearPlanetas(5,name);
+			}
+		}
 	}
 	void OnMouseEnter(){
-		label.GetComponent<TextMesh>().text=nombre;
+		label.GetComponent<TextMesh>().text=name;
 		label.transform.position=transform.position;
 		label.transform.localRotation= Quaternion.Euler(90f,0,0);
 	}

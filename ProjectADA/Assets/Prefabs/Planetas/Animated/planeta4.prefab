@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 408128}
   - component: {fileID: 9549316}
   m_Layer: 0
-  m_Name: Planet_5
+  m_Name: planeta4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

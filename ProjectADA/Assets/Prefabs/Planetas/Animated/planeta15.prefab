@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 453062}
   - component: {fileID: 9596840}
   m_Layer: 0
-  m_Name: Sun_1b
+  m_Name: planeta15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

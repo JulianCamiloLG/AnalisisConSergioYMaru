@@ -10,7 +10,16 @@ public class CrearMapa : MonoBehaviour {
 	public GameObject botonNebulosas;
 	public GameObject botonSimular;
 	public GameObject botonBorrar;
+	private int numeroNebu=0;
 	
+	void Update(){
+		GameObject nebu=GameObject.Find("Nebulosa");
+		if(nebu!=null){
+			nebu.name=nebu.name+" "+numeroNebu;
+			numeroNebu++;
+		}
+	}
+
 	public void CrearNebulosas(){
 		terreno.SetActive(true);
 		botonTerminar.SetActive(true);
