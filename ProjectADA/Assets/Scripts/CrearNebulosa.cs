@@ -14,10 +14,10 @@ public class CrearNebulosa : MonoBehaviour {
 	float tiempoclicks;
 	float tiempomax;
 	//jagged
-	int [] materiales= new int[4];
-	int [][] planeta= {materiales};
-	int [][] sistemaSolar={planeta};
-	int [][] nebulosa={sistemaSolar};
+	int [] materiales = {10,20,30,40};
+	int [] planeta = { 1 };
+	int [] sistemaSolar = { 2 };
+	int[][] nebulosa = { sistemaSolar,planeta,materiales };
 	
 
 	
