@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +13,13 @@ public class CrearNebulosa : MonoBehaviour {
 	int click;
 	float tiempoclicks;
 	float tiempomax;
+	//jagged
+	int [] materiales= new int[4];
+	int [][] planeta= {materiales};
+	int [][] sistemaSolar={planeta};
+	int [][] nebulosa={sistemaSolar};
+	
+
 	
 	void Start(){
 		arreglada=true;
