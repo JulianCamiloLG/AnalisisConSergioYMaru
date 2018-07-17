@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CanonPlasma : MonoBehaviour {
-	int [] costo = new int [4];
-	int dano;
+	public int [] costo = new int [4];
+	public int dano;
 
 	// Use this for initialization
 	void Start () {
@@ -19,26 +19,16 @@ public class CanonPlasma : MonoBehaviour {
 	void Update () {
 		
 	}
-	public int costo
-	{
-		get
-		{
-			return this.costo;
-		}
-		set
-		{
-			this.costo = value;
-		}
+	public int[] getCosto(){
+		return this.costo;
 	}
-	public int dano
-	{
-		get
-		{
-			return this.dano;
-		}
-		set
-		{
-			this.dano = value;
-		}
+	public int getBeneficio(){
+		return this.dano;
+	}
+	public void setCosto(int[] costo){
+		this.costo=costo;
+	}
+	public void setBeneficio(int dano){
+		this.dano=dano;
 	}
 }

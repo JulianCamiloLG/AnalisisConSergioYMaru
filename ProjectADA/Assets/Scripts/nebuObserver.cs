@@ -14,7 +14,7 @@ public class nebuObserver : MonoBehaviour {
 		GameObject nebulosas=GameObject.Find("Nebulosas");
 		foreach(Transform nebulosa in nebulosas.transform){
 			foreach(Transform componente in nebulosa.transform){
-				print(componente.name);
+				//print(componente.name);
 			}
 		}
 	}

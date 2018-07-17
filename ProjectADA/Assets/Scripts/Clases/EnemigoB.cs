@@ -16,26 +16,16 @@ public class EnemigoB : MonoBehaviour {
 	void Update () {
 		
 	}
-	public int vida
-	{
-		get
-		{
-			return this.vida;
-		}
-		set
-		{
-			this.vida = value;
-		}
+	public int getVida(){
+		return vida;
 	}
-	public int dano
-	{
-		get
-		{
-			return this.dano;
-		}
-		set
-		{
-			this.dano = value;
-		}
+	public int getDano(){
+		return this.dano;
+	}
+	public void setVida(int beneficio){
+		this.vida=beneficio;
+	}
+	public void setDano(int dano){
+		this.dano=dano;
 	}
 }

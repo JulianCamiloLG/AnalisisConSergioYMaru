@@ -9,14 +9,16 @@ public class CrearNebulosa : MonoBehaviour {
 	private GameObject nebulosaMover;
 	private GameObject label;
 	public string nombre;
+	public bool tieneEstacion;
 	Vector3 originalPos;
 	int click;
 	float tiempoclicks;
 	float tiempomax;
+	float delay;
 	//jagged
-	int [] materiales = {10,20,30,40};
-	int [] planeta = { 1 };
-	int [] sistemaSolar = { 2 };
+	static int[] materiales;
+	static int[] planeta;
+	static int[] sistemaSolar;
 	int[][] nebulosa = { sistemaSolar,planeta,materiales };
 	
 
@@ -31,7 +33,11 @@ public class CrearNebulosa : MonoBehaviour {
 		label=GameObject.Find("labelnebu");
 		originalPos=label.transform.position;
 		click=0;
+		delay=0.3f;
 		//cambiarNombre();
+		materiales = new int[4];
+		//planeta = { 1 };
+		//sistemaSolar = { 2 };
 	}
 
 	void Update(){
@@ -76,10 +82,10 @@ public class CrearNebulosa : MonoBehaviour {
 
 	void OnMouseDown(){
 		click++;
-		tiempoclicks=time.time;
-		if(click>1){
-			if((time.time-tiempoclicks)<delay){
-				listaPlanetas.instance.CrearPlanetas(5,name);
+		tiempoclicks=Time.time;
+		if(click%2==0){
+			if((Time.time-tiempoclicks)<delay){
+				listaPlanetas.instance.crearSistemas(name);
 			}
 		}
 	}

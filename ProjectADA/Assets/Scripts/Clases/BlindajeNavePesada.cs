@@ -19,26 +19,17 @@ public class BlindajeNavePesada : MonoBehaviour {
 	void Update () {
 		
 	}
-	public int costo
-	{
-		get
-		{
-			return this.costo;
-		}
-		set
-		{
-			this.costo = value;
-		}
+	
+	public int[] getCosto(){
+		return this.costo;
 	}
-	public int beneficio
-	{
-		get
-		{
-			return this.beneficio;
-		}
-		set
-		{
-			this.beneficio = value;
-		}
+	public int getBeneficio(){
+		return this.beneficio;
+	}
+	public void setCosto(int[] costo){
+		this.costo=costo;
+	}
+	public void setBeneficio(int beneficio){
+		this.beneficio=beneficio;
 	}
 }
